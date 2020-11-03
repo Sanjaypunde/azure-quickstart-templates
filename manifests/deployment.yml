@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubecluster1-7ff6"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubecluster1-7ff6"
+  template:
+    metadata:
+      labels:
+        app: "kubecluster1-7ff6"
+    spec:
+      containers:
+        - name: "kubecluster1-7ff6"
+          image: "containerregistry789.azurecr.io/kubecluster1"
+          ports:
+          - containerPort: 80
